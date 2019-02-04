@@ -103,6 +103,13 @@ public class Main {
                 System.out.println(e);
             }
             calc();
+        } else if (op.equals("sqrt"))
+        {
+            System.out.print("enter your number \n");
+            num1 = in.nextInt();
+            double result_;
+            result_ = Math.sqrt(num1);
+            System.out.print(result_);
         }
     }
 }

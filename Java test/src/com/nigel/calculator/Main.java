@@ -5,7 +5,16 @@ public class Main {
 
     public static void main(String[] args)
     {
-        calc();
+        Scanner scn = new Scanner(System.in);
+        System.out.print("What program do you want to run today? \n");
+        String prog = scn.nextLine();
+        if (prog.equals("calc"))
+        {
+            calc();
+        } else if (prog.equals("salary"))
+        {
+            salary();
+        }
     }
     public static void calc()
     {
@@ -110,6 +119,33 @@ public class Main {
             double result_;
             result_ = Math.sqrt(num1);
             System.out.print(result_);
+            try {
+                // thread to sleep for 1000 milliseconds
+                Thread.sleep(5000);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            calc();
         }
+    }
+    public static void salary() {
+        double salary;
+        double hr;
+        double result;
+        System.out.print("Welcome at the salary calculator \n");
+        Scanner salscn = new Scanner(System.in);
+        System.out.print("Enter your salary \n");
+        salary = salscn.nextDouble();
+        System.out.print("Enter your hours \n");
+        hr = salscn.nextDouble();
+        result = salary * hr;
+        System.out.print(result);
+        try {
+            // thread to sleep for 1000 milliseconds
+            Thread.sleep(5000);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        salary();
     }
 }

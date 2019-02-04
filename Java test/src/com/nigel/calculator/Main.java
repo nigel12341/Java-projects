@@ -18,9 +18,9 @@ public class Main {
     }
     public static void calc()
     {
-        int num1;
-        int num2;
-        int result;
+        double num1;
+        double num2;
+        double result;
         String op;
         Scanner in = new Scanner(System.in);
         System.out.print("Welcome to the most awesome java calculator ever \n");
@@ -29,9 +29,9 @@ public class Main {
         if (op.equals("+"))
         {
             System.out.print("enter your first number \n");
-            num1 = in.nextInt();
+            num1 = in.nextDouble();
             System.out.print("enter your second number \n");
-            num2 = in.nextInt();
+            num2 = in.nextDouble();
             result = num1 + num2;
             System.out.print("Result:" + result + "\n");
             try {
@@ -44,9 +44,9 @@ public class Main {
         }
         else if (op.equals("-")){
             System.out.print("enter your first number \n");
-            num1 = in.nextInt();
+            num1 = in.nextDouble();
             System.out.print("enter your second number \n");
-            num2 = in.nextInt();
+            num2 = in.nextDouble();
             result = num1 - num2;
             System.out.print("Result:" + result + "\n");
             try {
@@ -59,9 +59,9 @@ public class Main {
         } else if (op.equals("*"))
         {
             System.out.print("enter your first number \n");
-            num1 = in.nextInt();
+            num1 = in.nextDouble();
             System.out.print("enter your second number \n");
-            num2 = in.nextInt();
+            num2 = in.nextDouble();
             result = num1 * num2;
             System.out.print("Result:" + result + "\n");
             try {
@@ -74,9 +74,9 @@ public class Main {
         } else if (op.equals("/"))
         {
             System.out.print("enter your first number \n");
-            num1 = in.nextInt();
+            num1 = in.nextDouble();
             System.out.print("enter your second number \n");
-            num2 = in.nextInt();
+            num2 = in.nextDouble();
             result = num1 / num2;
             System.out.print("Result:" + result + "\n");
             try {
@@ -99,12 +99,11 @@ public class Main {
         } else if (op.equals("pow"))
         {
             System.out.print("enter your first number \n");
-            num1 = in.nextInt();
+            num1 = in.nextDouble();
             System.out.print("enter your second number \n");
-            num2 = in.nextInt();
-            double result_;
-            result_ = Math.pow(num1, num2);
-            System.out.print("Result:" + result_ + "\n");
+            num2 = in.nextDouble();
+            result = Math.pow(num1, num2);
+            System.out.print("Result:" + result + "\n");
             try {
                 // thread to sleep for 1000 milliseconds
                 Thread.sleep(5000);
@@ -115,10 +114,37 @@ public class Main {
         } else if (op.equals("sqrt"))
         {
             System.out.print("enter your number \n");
-            num1 = in.nextInt();
-            double result_;
-            result_ = Math.sqrt(num1);
-            System.out.print(result_);
+            num1 = in.nextDouble();
+            result = Math.sqrt(num1);
+            System.out.print(result);
+            try {
+                // thread to sleep for 1000 milliseconds
+                Thread.sleep(5000);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            calc();
+        } else if (op.equals("aoc"))
+        {
+            System.out.print("enter radius of circle \n");
+            num1 = in.nextDouble();
+            result = Math.PI * num1 * num1;
+            System.out.print("Result:" + result + "\n");
+            try {
+                // thread to sleep for 1000 milliseconds
+                Thread.sleep(5000);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            calc();
+        } else if (op.equals("aor"))
+        {
+            System.out.print("enter length of rectangle \n");
+            num1 = in.nextDouble();
+            System.out.print("enter width of rectangle \n");
+            num2 = in.nextDouble();
+            result = num1 * num2;
+            System.out.print("Result:" + result + "\n");
             try {
                 // thread to sleep for 1000 milliseconds
                 Thread.sleep(5000);
@@ -147,5 +173,8 @@ public class Main {
             System.out.println(e);
         }
         salary();
+    }
+    public static void converter() {
+        
     }
 }
